@@ -19,12 +19,12 @@ function Header() {
                     alt='logo' />
             </div>
             <nav className='desktop-nav'>
-                <ol>
-                    <li>Collections</li>
-                    <li>Men</li>
-                    <li>Women</li>
-                    <li>About</li>
-                    <li>Contact</li>
+                <ol className='desktop-nav__list'>
+                    <li className='desktop-nav__option'>Collections</li>
+                    <li className='desktop-nav__option'>Men</li>
+                    <li className='desktop-nav__option'>Women</li>
+                    <li className='desktop-nav__option'>About</li>
+                    <li className='desktop-nav__option'>Contact</li>
                 </ol>
             </nav>
             
