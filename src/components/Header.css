@@ -76,7 +76,7 @@
     }
     .header__user-avatar {
         width: 50px;
-        transition: all .1s;
+        transition: border .1s;
         border-radius: 50%;
     }
     .header__user-avatar:hover {
