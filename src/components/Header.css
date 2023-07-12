@@ -13,6 +13,11 @@
 }
 .header__cart {
     margin-right: 20px;
+    color: var(--dark-grayish-blue);
+    transition: color .2s;
+}
+.header__cart:hover {
+    color: var(--black)
 }
 .header__user-avatar {
     width: 25px;
@@ -48,13 +53,34 @@
     .desktop-nav__option {
         margin: 0 16px;
         color: var(--dark-grayish-blue);
+        position: relative;
+        transition: color .2s;
+    }
+    .desktop-nav__option::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 4px;
+        background-color: var(--orange);
+        left: 50%;
+        bottom: -45.5px;
+        transition: all .2s;
     }
     .desktop-nav__option:hover {
         color: var(--black);
         cursor: pointer;
     }
+    .desktop-nav__option:hover::after {
+        left: 0;
+        width: 100%;
+    }
     .header__user-avatar {
         width: 50px;
+        transition: all .1s;
+        border-radius: 50%;
+    }
+    .header__user-avatar:hover {
+        border: 2px solid var(--orange);
     }
 }
 @media (min-width: 990px) {
