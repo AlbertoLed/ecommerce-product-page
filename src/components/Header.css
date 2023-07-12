@@ -1,0 +1,27 @@
+.header {
+    display: flex;
+    padding: 20px 25px;
+    align-items: center;
+}
+.header__mobile-menu {
+    margin-right: 15px;
+}
+.header__right-items {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+.header__cart {
+    margin-right: 20px;
+}
+.header__user-avatar {
+    width: 25px;
+}
+.desktop-nav {
+    display: none;
+}
+.header__cart:hover, 
+.header__mobile-menu:hover, 
+.header__user-avatar:hover {
+    cursor: pointer;
+}
