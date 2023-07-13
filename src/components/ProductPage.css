@@ -38,3 +38,113 @@
 .button__icon {
     transform: scale(.8);
 }
+
+.info { 
+    padding: 7%;
+    margin-bottom: 70px;
+}
+.info__company {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .8em;
+    letter-spacing: .1em;
+    color: var(--orange);
+    margin-bottom: 15px;
+}
+.info__name {
+    font-size: 1.8em;
+    color: var(--very-dark-blue);
+    line-height: 1.1em;
+    margin-bottom: 20px;
+}
+.info__description {
+    color: var(--dark-grayish-blue);
+    font-size: .94em;
+    line-height: 1.7em;
+    margin-bottom: 30px;
+}
+.info__price-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: 700;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.info__discount-container {
+    display: flex;
+    align-items: center;
+}
+.info__current-price {
+    font-size: 1.7em;
+    margin-right: 15px;
+    color: var(--very-dark-blue);
+}
+.info__discount {
+    padding: 3px 8px;
+    border-radius: 7px;
+    background-color: var(--orange-trans10);
+    color: var(--orange);
+}
+.info__price {
+    justify-self: flex-end;
+    text-decoration: line-through;
+    color: var(--grayish-blue);
+}
+.info__add-item {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr;
+    height: 125px;
+    row-gap: 15px;
+}
+.add-item__quantity-container {
+    background-color: var(--ligth-grayish-blue);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 22px;
+    border-radius: 10px;
+}
+.add-item__icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 17px;
+    height: 17px;
+    background-color: transparent;
+    border: none;
+    color: var(--orange);
+    transition: opacity .2s;
+}
+.add-item__icon-button:hover {
+    opacity: .5;
+    cursor: pointer;
+}
+.add-item__quantity {
+    font-weight: 700;
+}
+.add-itme__add-button {
+    border: none;
+    background-color: var(--orange);
+    border-radius: 10px;
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity .2s;
+    position: relative;
+    box-shadow: 0 35px 30px -10px hsl(26deg 100% 55% / .2);
+}
+.add-itme__add-button:hover {
+    opacity: .75;
+    cursor: pointer;
+}
+.add-button__icon {
+    transform: scale(.8);
+    margin-right: 13px;
+}
+.add-button__text {
+    font-weight: 700;
+    font-size: 1.2em;
+    font-family: 'Kumbh Sans', sans-serif;
+}
