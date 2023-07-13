@@ -18,7 +18,7 @@ export const productData = {
             thumbnail: 'image-product-3-thumbnail.jpg'
         },
         {
-            imgae: 'image-product-4.jpg',
+            image: 'image-product-4.jpg',
             thumbnail: 'image-product-4-thumbnail.jpg'
         }
     ]
