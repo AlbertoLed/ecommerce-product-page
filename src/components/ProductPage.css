@@ -120,10 +120,13 @@
     opacity: .5;
     cursor: pointer;
 }
+.add-item__icon-button:active {
+    opacity: .85;
+}
 .add-item__quantity {
     font-weight: 700;
 }
-.add-itme__add-button {
+.add-item__add-button {
     border: none;
     background-color: var(--orange);
     border-radius: 10px;
@@ -135,7 +138,7 @@
     position: relative;
     box-shadow: 0 35px 30px -10px hsl(26deg 100% 55% / .2);
 }
-.add-itme__add-button:hover {
+.add-item__add-button:hover {
     opacity: .75;
     cursor: pointer;
 }
