@@ -12,12 +12,31 @@
     align-items: center;
 }
 .header__cart {
-    margin-right: 20px;
-    color: var(--dark-grayish-blue);
-    transition: color .2s;
+    margin-right: 15px;
+    display: grid;
+    grid-template: 1fr / 1fr;
+    height: 25px;
+    width: 27px;
 }
-.header__cart:hover {
+.cart__icon {
+    transition: color .2s;
+    color: var(--dark-grayish-blue);
+    grid-area: 1 / 1 / 1 / 1;
+    align-self: flex-end;
+}
+.cart__icon:hover {
     color: var(--black)
+}
+.cart__quantity {
+    grid-area: 1 / 1 / 1 / 1;
+    justify-self: flex-end;
+    background-color: var(--orange);
+    color: var(--white);
+    padding: 0 6px;
+    border-radius: 7px;
+    font-size: .65em;
+    font-weight: 700;
+    align-self: flex-start;
 }
 .header__user-avatar {
     width: 25px;
