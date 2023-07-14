@@ -157,16 +157,15 @@
     font-size: 1.2em;
     font-family: 'Kumbh Sans', sans-serif;
 }
-@media (min-width: 790px) {
+@media (min-width: 650px) {
     .product-page {
-        margin-top: 111px;
+        padding-top: 25px;
     }
     .img-container {
         width: 450px;
         display: grid;
         grid-template: 1fr 100px / 1fr;
         margin: 0 auto;
-        padding-top: 50px;
         row-gap: 30px;
     }
     .img-container__image {
@@ -189,7 +188,6 @@
         border-radius: 10px;
         overflow: hidden;
         position: relative;
-
     }
     .img-container__thumbnail-item--selected {
         border: 2px solid var(--orange);
@@ -205,5 +203,70 @@
     }
     .img-container__thumbnail-image--selected {
         opacity: .3;
+    }
+
+    .info { 
+        width: 450px;
+        padding: 0;
+        margin: 30px auto 70px auto;
+    }
+    .info__company {
+        font-size: .9em;
+        margin-bottom: 20px;
+    }
+    .info__name {
+        font-size: 2.7em;
+        margin-bottom: 35px;
+    }
+    .info__description {
+        font-size: 1em;
+    }
+    .info__price-container {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 35px;
+        height: 65px;
+    }
+    .info__add-item {
+        grid-template: 1fr / 40% 60%;
+        height: 55px;
+        column-gap: 15px;
+    }
+}
+@media (min-width: 790px) {
+    .product-page {
+        margin-top: 111px;
+        padding-top: 50px;
+    }
+}
+@media (min-width: 990px) {
+    .product-page {
+        margin-top: 111px;
+        padding-top: 90px;
+        display: grid;
+        grid-template: 1fr / 1fr 1fr;
+        align-items: center;
+        column-gap: 4%;
+    }
+    .img-container {
+        width: 450px;
+        display: grid;
+        grid-template: 1fr 100px / 1fr;
+        margin: 0 0;
+        row-gap: 30px;
+        justify-self: flex-end;
+    }
+    .info { 
+        width: 450px;
+        padding: 0;
+        justify-self: flex-start;
+        margin: 0;
+        margin-bottom: 30px;
+    }
+}
+@media (min-width: 1150px) {
+    .product-page {
+        column-gap: min(9%, 130px);
     }
 }
