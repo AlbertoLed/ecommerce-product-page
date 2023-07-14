@@ -22,11 +22,16 @@ function ProductPage(props) {
         addItems(quantity)
         setQuantity(0)
     }
+    function selectImage(selectedImage) {
+        const imageIndex = images.findIndex(image => image.thumbnail === selectedImage)
+        setCurrentImage(imageIndex)
+        // console.log('hi')
+    }
 
     const currentPrice = price - (price * (discount / 100))
 
     return(
-        <main>
+        <main className='product-page'>
             <div className='img-container'>
                 <img 
                 className='img-container__image' 
@@ -46,6 +51,22 @@ function ProductPage(props) {
                     onClick={nextImage}>
                         <svg className='button__icon' width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="currentcolor" stroke-width="4" fill="none" fill-rule="evenodd"/></svg>
                 </button>
+                <ul className='img-container__thumbnails-list'>
+                    {images.map(image => 
+                    <li 
+                    className={`
+                        img-container__thumbnail-item
+                        ${images[currentImage].thumbnail === image.thumbnail &&
+                        `img-container__thumbnail-item--selected`}`}
+                    onClick={() => selectImage(image.thumbnail)}>
+                        <img 
+                            className={`
+                                img-container__thumbnail-image
+                                ${images[currentImage].thumbnail === image.thumbnail &&
+                                    `img-container__thumbnail-image--selected`}`}
+                            src={image.thumbnail} alt="" />
+                    </li>)}
+                </ul>
             </div>
             <div className='info'>
                 <p className='info__company'>{company}</p>
