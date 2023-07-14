@@ -57,7 +57,16 @@
 @media (min-width: 790px) {
     .header {
         padding: 30px 5%;
-        /* margin: 0 5%; */
+    }
+    .header::before {
+        content: '';
+        position: fixed;
+        width: 90%;
+        height: 110px;
+        margin-left: 5%;
+        margin-right: 5%;
+        top: 0;
+        left: 0;
         border-bottom: 1px solid var(--grayish-blue);
     }
     .header__mobile-menu {
@@ -109,6 +118,10 @@
 @media (min-width: 990px) {
     .header {
         padding: 30px 11%;
-
+    }
+    .header::before {
+        width: 78%;
+        margin-left: 11%;
+        margin-right: 11%;
     }
 }
