@@ -148,6 +148,9 @@
     opacity: .75;
     cursor: pointer;
 }
+.add-item__add-button:active {
+    opacity: .9;
+}
 .add-button__icon {
     transform: scale(.8);
     margin-right: 13px;
