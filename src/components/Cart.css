@@ -6,10 +6,10 @@
     top: 75px;
     right: 2.5%;
     border-radius: 10px;
-    box-shadow: 0 5px 20px 15px rgba(0, 0, 0, .15);
-    z-index: 1;
+    box-shadow: 0 20px 25px 5px rgba(0, 0, 0, .15);
     display: grid;
     grid-template: 70px 1fr / 1fr;
+    z-index: 2;
 }
 .cart__title {
     align-self: center;
@@ -91,4 +91,15 @@
     justify-self: center;
     color: var(--dark-grayish-blue);
     font-weight: 700;
+}
+@media (min-width: 790px) {
+    .cart {
+        top: 90px;
+        right: 5%;
+    }
+}
+@media (min-width: 990px) {
+    .cart {
+        right: 7%;
+    }
 }
