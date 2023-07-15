@@ -85,3 +85,10 @@
 .cart__checkout-button:active {
     opacity: .9;
 }
+.cart__empty-message {
+    grid-area: 1 / 1 / 3 / 2;
+    align-self: center;
+    justify-self: center;
+    color: var(--dark-grayish-blue);
+    font-weight: 700;
+}
