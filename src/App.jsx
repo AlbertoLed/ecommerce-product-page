@@ -8,16 +8,20 @@ import './App.css'
 
 function App() {
   const [cartItems, setCartItems] = useState(0)
-  const [openCart, setOpenCart] = useState(true)
+  const [openCart, setOpenCart] = useState(false)
 
   function addItems(quantity) {
     setCartItems(prevCartItems => prevCartItems + quantity)
+  }
+  function toggleCart() {
+    setOpenCart(prevOpenCart => !prevOpenCart)
   }
 
   return (
     <>
       <Header 
         cartItems={cartItems}
+        toggleCart={toggleCart}
       />
       {openCart && 
       <Cart
