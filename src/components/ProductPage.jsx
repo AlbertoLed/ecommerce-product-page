@@ -42,14 +42,14 @@ function ProductPage(props) {
                     img-container__button 
                     img-container__button--left'
                     onClick={previousImage}>
-                        <svg className='button__icon' width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="currentcolor" fill="none"/></svg>
+                        <svg className='button__icon' width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="currentcolor" strokeWidth="4" fill="none"/></svg>
                 </button>
                 <button
                     className='
                     img-container__button
                     img-container__button--right'
                     onClick={nextImage}>
-                        <svg className='button__icon' width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="currentcolor" fill="none"/></svg>
+                        <svg className='button__icon' width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="currentcolor" strokeWidth="4" fill="none"/></svg>
                 </button>
                 <ul className='img-container__thumbnails-list'>
                     {images.map(image => 
