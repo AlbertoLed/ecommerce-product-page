@@ -1,4 +1,4 @@
-import { useState} from 'react'
+import { useState, useEffect } from 'react'
 import Header from './components/Header'
 import ProductPage from './components/ProductPage'
 import Cart from './components/Cart'
@@ -7,8 +7,12 @@ import { productData } from '../productData'
 import './App.css'
 
 function App() {
-  const [cartItems, setCartItems] = useState(0)
+  const [cartItems, setCartItems] = useState(Number(localStorage.getItem('cartItems')) || 0)
   const [openCart, setOpenCart] = useState(false)
+
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems))
+  }, [cartItems])
 
   function addItems(quantity) {
     setCartItems(prevCartItems => prevCartItems + quantity)
