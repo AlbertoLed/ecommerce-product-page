@@ -20,6 +20,9 @@ function App() {
   function toggleCart() {
     setOpenCart(prevOpenCart => !prevOpenCart)
   }
+  function deleteItem() {
+    setCartItems(0)
+  }
 
   return (
     <>
@@ -34,6 +37,7 @@ function App() {
         price={productData.price}
         discount={productData.discount}
         cartItems={cartItems}
+        deleteItem={deleteItem}
       />}
       <ProductPage
         name={productData.productName}
