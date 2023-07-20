@@ -53,11 +53,15 @@
     top: 0;
     height: 100%;
     width: 250px;
-    padding: 25px;
+    padding-top: 25px;
+    padding-left: 25px;
     z-index: 2;
+    transition: width .2s, padding-left .2s;
+    overflow: hidden;
 }
 .nav--closed {
-    display: none;
+    width: 0;
+    padding-left: 0;
 }
 .nav__close-icon {
     margin-bottom: 50px;
@@ -88,9 +92,14 @@
     top: 0;
     left: 0;
     z-index: 1;
+    display: block;
+    transition: opacity .2s;
 }
 .nav-dark-bg--closed {
-    display: none;
+    opacity: 0;
+    width: 0;
+    transition: opacity .2s, width .03s .19s;
+
 }
 .header__cart:hover, 
 .header__mobile-menu:hover, 
@@ -126,6 +135,8 @@
         width: auto;
         padding: 0;
         z-index: 0;
+        transition: unset;
+        overflow: visible;
     }
     .nav__close-icon {
         display: none;
