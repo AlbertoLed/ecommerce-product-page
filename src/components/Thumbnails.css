@@ -1,0 +1,31 @@
+.thumbnails{
+    width: 450px;
+    display: grid;
+    grid-template: 1fr / repeat(4, 1fr);
+    column-gap: 30px;
+    list-style: none;
+}
+.thumbnails__item {
+    height: 90px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.thumbnails__item--selected {
+    border: 2px solid var(--orange);
+}
+.thumbnail__image-bg {
+    background-color: white;
+}
+.thumbnail__image {
+    width: 100%;
+    transition: opacity .2s;
+}
+.thumbnail__image:hover {
+    width: 100%;
+    cursor: pointer;
+    opacity: .3;
+}
+.thumbnail__image--selected {
+    opacity: .3;
+}

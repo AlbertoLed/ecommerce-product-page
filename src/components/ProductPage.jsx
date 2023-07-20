@@ -1,9 +1,12 @@
 import { useState } from 'react'
+import Lightbox from './Lightbox'
+import Thumbnail from './Thumbnails'
 import './ProductPage.css'
 
 function ProductPage(props) {
     const {name, company, description, price, discount, images, addItems} = props
     const [currentImage, setCurrentImage] = useState(0)
+    const [isLightboxOpen, setIsLigthboxOpen] = useState(false)
     const [quantity, setQuantity] = useState(0)
 
     function previousImage() {
@@ -25,7 +28,15 @@ function ProductPage(props) {
     function selectImage(selectedImage) {
         const imageIndex = images.findIndex(image => image.thumbnail === selectedImage)
         setCurrentImage(imageIndex)
-        // console.log('hi')
+    }
+    function openLightbox() {
+        console.log(window.innerWidth)
+        if(window.innerWidth >= 650) {
+            setIsLigthboxOpen(true)
+        }
+    }
+    function closeLightbox() {
+        setIsLigthboxOpen(false)
     }
 
     const currentPrice = price - (price * (discount / 100))
@@ -36,6 +47,7 @@ function ProductPage(props) {
                 <img 
                 className='img-container__image' 
                 src={images[currentImage].image} 
+                onClick={openLightbox}
                 alt="product image" />
                 <button 
                     className='
@@ -51,23 +63,14 @@ function ProductPage(props) {
                     onClick={nextImage}>
                         <svg className='button__icon' width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="currentcolor" strokeWidth="4" fill="none"/></svg>
                 </button>
-                <ul className='img-container__thumbnails-list'>
-                    {images.map(image => 
-                    <li 
-                    key={image.thumbnail}
-                    className={`
-                        img-container__thumbnail-item
-                        ${images[currentImage].thumbnail === image.thumbnail &&
-                        `img-container__thumbnail-item--selected`}`}
-                    onClick={() => selectImage(image.thumbnail)}>
-                        <img 
-                            className={`
-                                img-container__thumbnail-image
-                                ${images[currentImage].thumbnail === image.thumbnail &&
-                                    `img-container__thumbnail-image--selected`}`}
-                            src={image.thumbnail} alt="" />
-                    </li>)}
-                </ul>
+                <div className='img-container__thumbnail'>
+                    <Thumbnail 
+                    images={images}
+                    currentImage={currentImage}
+                    selectImage={selectImage}
+                    />
+                </div>
+                
             </div>
             <div className='info'>
                 <p className='info__company'>{company}</p>
@@ -110,6 +113,16 @@ function ProductPage(props) {
                     </button>
                 </div>      
             </div>
+            { isLightboxOpen && 
+            <Lightbox 
+                images={images}
+                currentImage={currentImage}
+                selectImage={selectImage}
+                previousImage={previousImage}
+                nextImage={nextImage}
+                closeLightbox={closeLightbox}
+            /> }
+            
         </main>
     )
 }
