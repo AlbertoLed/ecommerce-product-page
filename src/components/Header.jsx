@@ -2,31 +2,47 @@ import React from 'react'
 import iconMenu from '../../public/icon-menu.svg'
 import logo from '../../public/logo.svg'
 import userAvatar from '../../public/image-avatar.png'
+import closeIcon from '../../public/icon-close.svg'
 import './Header.css'
 
 function Header(props) {
     const {cartItems, toggleCart} = props
+    const [isMobileNav, setIsMobileNav] = React.useState(false)
+
+    function toggleMobileNav() {
+        setIsMobileNav(prev => !prev)
+    }
+
     return (
         <header className='header'>
             <div>
                 <img 
                     className='header__mobile-menu' 
                     src={iconMenu} 
-                    alt='icon menu' />
+                    alt='icon menu'
+                    onClick={toggleMobileNav} />
+                    
                 <img 
                     className='header__logo' 
                     src={logo} 
                     alt='logo' />
             </div>
-            <nav className='desktop-nav'>
-                <ol className='desktop-nav__list'>
-                    <li className='desktop-nav__option'>Collections</li>
-                    <li className='desktop-nav__option'>Men</li>
-                    <li className='desktop-nav__option'>Women</li>
-                    <li className='desktop-nav__option'>About</li>
-                    <li className='desktop-nav__option'>Contact</li>
+            <nav className={`nav ${!isMobileNav && `nav--closed`}`}>
+                <img 
+                className='nav__close-icon' 
+                src={closeIcon} 
+                alt="close icon"
+                onClick={toggleMobileNav} />
+                <ol className='nav__list'>
+                    <li className='nav__option'>Collections</li>
+                    <li className='nav__option'>Men</li>
+                    <li className='nav__option'>Women</li>
+                    <li className='nav__option'>About</li>
+                    <li className='nav__option'>Contact</li>
                 </ol>
             </nav>
+            <div className={`nav-dark-bg ${!isMobileNav && `nav-dark-bg--closed`}`}></div>
+
             
             <div className='header__right-items'>
                 <div 

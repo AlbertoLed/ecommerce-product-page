@@ -30,7 +30,6 @@ function ProductPage(props) {
         setCurrentImage(imageIndex)
     }
     function openLightbox() {
-        console.log(window.innerWidth)
         if(window.innerWidth >= 650) {
             setIsLigthboxOpen(true)
         }

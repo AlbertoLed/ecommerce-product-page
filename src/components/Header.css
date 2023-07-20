@@ -46,7 +46,50 @@
 .header__user-avatar {
     width: 25px;
 }
-.desktop-nav {
+.nav {
+    position: fixed;
+    background-color: var(--white);
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 250px;
+    padding: 25px;
+    z-index: 2;
+}
+.nav--closed {
+    display: none;
+}
+.nav__close-icon {
+    margin-bottom: 50px;
+}
+.nav__close-icon:hover {
+    cursor: pointer;
+}
+.nav__list {
+    list-style: none;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.nav__option {
+    font-weight: 700;
+    font-size: 1.1em;
+}
+.nav__option:hover {
+    cursor: pointer;
+}
+.nav-dark-bg {
+    position: fixed;
+    background-color: var(--black);
+    opacity: .75;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.nav-dark-bg--closed {
     display: none;
 }
 .header__cart:hover, 
@@ -74,23 +117,37 @@
     .header__mobile-menu {
         display: none;
     }
-    .desktop-nav {
+    .nav {
         display: block;
+        position: static;
         margin-left: 40px;
+        background-color: transparent;
+        height: auto;
+        width: auto;
+        padding: 0;
+        z-index: 0;
     }
-    .desktop-nav__list {
+    .nav__close-icon {
+        display: none;
+    }
+    .nav__list {
         display: flex;
         list-style: none;
         font-size: .95em;
         font-weight: 400;
+        height: auto;
+        flex-direction: row;
+        justify-content: flex-start;
     }
-    .desktop-nav__option {
+    .nav__option {
         margin: 0 16px;
         color: var(--dark-grayish-blue);
         position: relative;
         transition: color .2s;
+        font-weight: 500;
+        font-size: 1em;
     }
-    .desktop-nav__option::after {
+    .nav__option::after {
         content: '';
         position: absolute;
         width: 0;
@@ -100,13 +157,15 @@
         bottom: -45.5px;
         transition: all .2s;
     }
-    .desktop-nav__option:hover {
+    .nav__option:hover {
         color: var(--black);
-        cursor: pointer;
     }
-    .desktop-nav__option:hover::after {
+    .nav__option:hover::after {
         left: 0;
         width: 100%;
+    }
+    .nav-dark-bg {
+        display: none;
     }
     .header__user-avatar {
         width: 50px;
