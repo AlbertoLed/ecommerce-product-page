@@ -1,4 +1,5 @@
 import React from 'react'
+import Cart from './Cart'
 import iconMenu from '../../public/icon-menu.svg'
 import logo from '../../public/logo.svg'
 import userAvatar from '../../public/image-avatar.png'
@@ -6,7 +7,7 @@ import closeIcon from '../../public/icon-close.svg'
 import './Header.css'
 
 function Header(props) {
-    const {cartItems, toggleCart} = props
+    const {cartItems, toggleCart, openCart, thumbnail, name, price, discount, deleteItem} = props
     const [isMobileNav, setIsMobileNav] = React.useState(false)
 
     function toggleMobileNav() {
@@ -56,6 +57,15 @@ function Header(props) {
                     src={userAvatar} 
                     alt='user avatar' />
             </div>
+            {openCart && 
+            <Cart
+                thumbnail={thumbnail}
+                name={name}
+                price={price}
+                discount={discount}
+                cartItems={cartItems}
+                deleteItem={deleteItem}
+            />}
         </header>
     )
 }

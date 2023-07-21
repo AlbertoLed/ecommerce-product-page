@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import Header from './components/Header'
 import ProductPage from './components/ProductPage'
-import Cart from './components/Cart'
 import { productData } from '../productData'
 
 import './App.css'
@@ -29,16 +28,14 @@ function App() {
       <Header 
         cartItems={cartItems}
         toggleCart={toggleCart}
-      />
-      {openCart && 
-      <Cart
+        openCart={openCart}
         thumbnail={productData.images[0].thumbnail}
         name={productData.productName}
         price={productData.price}
         discount={productData.discount}
-        cartItems={cartItems}
         deleteItem={deleteItem}
-      />}
+      />
+      
       <ProductPage
         name={productData.productName}
         company={productData.companyName}
