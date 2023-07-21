@@ -12,7 +12,7 @@
     justify-content: center;
 }
 .lightbox__close-icon {
-    width: 550px;
+    width: min(550px, 70vh);
     height: 50px;
     align-self: center;
     display: flex;
@@ -28,15 +28,16 @@
     transform: scale(1.65);
 }
 .lightbox__image-container {
-    width: 550px;
+    height: min(550px, 70vh);
+    aspect-ratio: 1 / 1;
     display: grid;
     grid-template: 1fr / 1fr;
+    margin-bottom: 40px;
 }
 .lightbox__image {
     width: 100%;
     grid-area: 1 / 1 / 1 / 1;
     border-radius: 15px;
-    margin-bottom: 40px;
 }
 .lightbox__button {
     background-color: var(--white);
