@@ -19,6 +19,7 @@ const {images, currentImage, selectImage} = props
                     className={`thumbnail__image
                         ${images[currentImage].thumbnail === image.thumbnail &&
                         `thumbnail__image--selected`}`}
+                    alt='product image'
                     />
                 </div>
             </li>)}
